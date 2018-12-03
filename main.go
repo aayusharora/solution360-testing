@@ -84,13 +84,14 @@ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"},"tra
 				})
 				attacker := vegeta.NewAttacker()
 
+
 				var metrics vegeta.Metrics
 				for res := range attacker.Attack(targeter, rate, duration, "Big Bang!") {
 					metrics.Add(res)
 				}
 				metrics.Close()
 
-				fmt.Printf("99th percentile: %s\n", metrics)
+				fmt.Printf("99th percentile: %s\n", metrics.Errors)
 
 				// Print the attack target
 				fmt.Println(target)
