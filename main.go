@@ -90,7 +90,7 @@ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"},"tra
 				}
 				metrics.Close()
 
-				fmt.Printf("99th percentile: %s\n", metrics.Latencies.P99)
+				fmt.Printf("99th percentile: %s\n", metrics)
 
 				// Print the attack target
 				fmt.Println(target)
