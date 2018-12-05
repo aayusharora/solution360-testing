@@ -76,7 +76,7 @@ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"},"tra
 				check(err)
 				fmt.Println(body)
 				rate := vegeta.Rate{Freq: 10000, Per: time.Second}
-				duration := 600 * time.Second
+				duration := 60 * time.Second
 				targeter := vegeta.NewStaticTargeter(vegeta.Target{
 					Method: "POST",
 					URL:    "https://go-test-dot-solution360-event.appspot.com/pubsub/publish?token=token69",
@@ -91,8 +91,13 @@ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36"},"tra
 				}
 				metrics.Close()
 
+				fmt.Println("------")
 				fmt.Printf("99th percentile: %s\n", metrics.Errors)
+				fmt.Println("------")
 
+				fmt.Println("------")
+				fmt.Printf("99th percentile: %s\n", metrics.StatusCodes)
+				fmt.Println("------")
 				// Print the attack target
 				fmt.Println(target)
 
